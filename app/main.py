@@ -31,3 +31,12 @@ def predict(wine: Wine):
     np_batches = np.array(batches)
     pred = clf.predict(np_batches).tolist()
     return {"Prediction": pred}
+
+
+# docker build -t wine-api .
+#
+# docker run --rm -p 81:80 mlepc4w2-ugl:with-batch
+#
+# curl -X POST http://localhost:81/predict \
+#     -d @./wine-examples/batch_1.json \
+#     -H "Content-Type: application/json"
