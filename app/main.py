@@ -40,3 +40,6 @@ def predict(wine: Wine):
 # curl -X POST http://localhost:81/predict \
 #     -d @./wine-examples/batch_1.json \
 #     -H "Content-Type: application/json"
+#
+# docker-compose up
+
