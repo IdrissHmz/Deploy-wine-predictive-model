@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  no-batch:
+    image: wine-api
+    links:
+      - locust
+  batch-1:
+    image: wine-api
+    links:
+      - locust
+  batch-32:
+    image: wine-api
+    links:
+      - locust
+  batch-64:
+    image: wine-api
+    links:
+      - locust
+  locust:
+    image: locustio/locust
+    ports:
+      - "8089:8089"
+    volumes:
+      - ./:/mnt/locust
+    command: -f /mnt/locust/locustfile.py
